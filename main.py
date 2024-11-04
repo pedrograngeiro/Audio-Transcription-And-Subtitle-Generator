@@ -1,7 +1,7 @@
 import os
 import whisper
 from whisper.utils import get_writer
-
+from extract_audio import extract_audio
 
 def transcribe_audio(audio_file, model_name='small', output_directory='./srts/'):
     model = whisper.load_model(model_name)
@@ -18,5 +18,6 @@ def transcribe_audio(audio_file, model_name='small', output_directory='./srts/')
 
 
 # Usage
-audio = "audios/IELTS-Speaking-Test-Perfect-Band-9-IELTS-Advantage.mp3"
+input_file = "video.mp4"
+audio = extract_audio(input_file)
 transcribe_audio(audio)
