@@ -4,7 +4,7 @@ import whisper
 from whisper.utils import get_writer
 
 model = whisper.load_model('small')
-audio = "audios/videoplayback.mp3"
+audio = "audios/IELTS-Speaking-Test-Perfect-Band-9-IELTS-Advantage.mp3"
 result = model.transcribe(audio, fp16=False)
 output_directory = "./srts/"
 

@@ -1,7 +1,7 @@
 import os.path
 import subprocess
 
-input_file = "videos/videoplayback.mp4"
+input_file = "videos/IELTS-Speaking-Test-Perfect-Band-9-IELTS-Advantage.mp4"
 output_directory = "audios"
 output_file = os.path.join(output_directory, os.path.basename(input_file).replace(".mp4", ".mp3"))
 
