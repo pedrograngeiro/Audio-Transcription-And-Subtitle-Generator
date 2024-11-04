@@ -16,3 +16,4 @@ txt_filename = os.path.splitext(audio_filename)[0] + ".txt"
 
 with open(os.path.join(output_directory, txt_filename), "w", encoding="utf-8") as txt:
     txt.write(result["text"])
+

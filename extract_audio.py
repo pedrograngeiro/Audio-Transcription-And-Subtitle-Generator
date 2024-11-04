@@ -1,11 +1,11 @@
 import os.path
 import subprocess
+from pathlib import Path
 
-input_file = "videos/IELTS-Speaking-Test-Perfect-Band-9-IELTS-Advantage.mp4"
-output_directory = "audios"
-output_file = os.path.join(output_directory, os.path.basename(input_file).replace(".mp4", ".mp3"))
-
-ffmpeg_command = f"ffmpeg -i {input_file} -vn -acodec libmp3lame {output_file}"
-subprocess.run(ffmpeg_command, shell=True)
-
-print(f"Extracted audio from {input_file} to {output_file}")
+def extract_audio(input_file, output_directory="audios"):
+    input_path = Path(input_file)
+    output_directory_path = Path(output_directory)
+    output_file = output_directory_path / input_path.with_suffix(".mp3").name
+    ffmpeg_command = ["ffmpeg", "-i", input_file, "-vn", "-acodec", "libmp3lame", output_file]
+    subprocess.run(ffmpeg_command)
+    print(f"Extracted audio from {input_file} to {output_file}")
